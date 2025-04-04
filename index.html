@@ -7,7 +7,7 @@
 		content="Caffè Duca è un bar situato nel cuore di Torino, noto per la sua atmosfera accogliente e la vasta selezione di caffè, dolci e piatti leggeri." />
 	<meta name="author" content="Eand Avdiu">
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" type="image/svg" href="./assets/favicon/Caffe_DUCA_favicon.svg" />
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,108 +26,54 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="pag-wrapper">
+<body>
 
-	<nav class="nav-bar">
+	<!-- Header Section (Welcome Area) -->
+	<header id="hero">
+		<!-- Logo (Use an actual SVG file) -->
+		<img src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Site Logo" id="logo">
 
-		<!-- Socials -->
-		<div class="nav-socials">
-			<!-- Instagram -->
-			<a href="https://www.instagram.com/caffeducatorino/" aria-label="Instagram" target="_blank" rel="noopener">
-			  <i class="fa-brands fa-instagram fa-xl"></i>
-			</a>
-		  
-			<!-- Facebook -->
-			<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Facebook" target="_blank" rel="noopener">
-			  <i class="fa-brands fa-facebook-f fa-xl"></i>
-			</a>
-		  
-			<!-- WhatsApp -->
-			<a href="https://wa.me/3483156301" aria-label="WhatsApp" target="_blank" rel="noopener">
-			  <i class="fa-brands fa-whatsapp fa-xl"></i>
-			</a>
-		  </div>
+		<!-- Background Image is set via CSS -->
+	</header>
 
-		<!-- Hamburger button -->
-		<div class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-			<img src="./assets/favicon/Caffe_DUCA_favicon.svg" class="nav-icon">
-		</div>
-		
-		<!-- Menu -->
-		<div class="nav-menu" id="navMenu">
-			<ul>
-			<li><a href="#home" class="nav-link">Home</a></li>
-			<li><a href="#menu" class="nav-link">Menu</a></li>
-			<li><a href="#hours" class="nav-link">Hours</a></li>
-			<li><a href="#contact" class="nav-link">Contact</a></li>
-			</ul>
-		</div>
+	<!-- Hamburger Menu Button -->
+	<button id="menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<!-- Navigation Menu (Initially Hidden) -->
+	<nav id="main-nav">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
 	</nav>
 
-	<!-- Hero -->
-	<div class="hero">
-		<div class="hero-top">
-			<div class="hero-icons">
-				<img src="./assets/favicon/Caffe_DUCA_icon.svg" />
-				<img src="./images/9612660.png" />
-			</div>
-		</div>
-		<div class="hero-content">
-			<h1 class="h1">Çfarë është Lorem Ipsum?</h1>
-			<p class="fa-paragraph-big">Lorem Ipsum është një tekst shabllon i industrisë së printimit dhe shtypshkronjave. Lorem Ipsum ka qenë teksti shabllon i industrisë që nga vitet 1500, kur një shtypës i panjohur morri një galeri shkrimesh dhe i ngatërroi për të krijuar një libër mostër. Teksti i ka mbijetuar jo vetëm pesë shekujve, por edhe kalimit në shtypshkrimin elektronik, duke ndenjur në thelb i pandryshuar. U bë i njohur në vitet 1960 me lëshimin e letrave 'Letraset' që përmbanin tekstin Lorem Ipsum, e në kohët e fundit me aplikacione publikimi si Aldus PageMaker që përmbajnë versione të Lorem Ipsum.</p>
-		</div>
-		<div class="hero-bottom">
-			<h2 class="h2-big">Pse e përdorim?</h2>
-			<p class="hero-reserevation">
-				Prenotani tani dhe shijoni një përvojë të paharrueshme në Caffè Duca! <br>
-				<a href="https://wa.me/3483156301" class="btn btn-primary">Prenotoni tani</a>
-			</p>
+	<!-- Main Content Area -->
+	<main>
+		<section style="height: 100vh; background-color: #f0f0f0;">
+			<h1>Section 1</h1>
+			<p>Scroll down to see the effect...</p>
+			<p>Lots of content here...</p>
+		</section>
+		<section style="height: 100vh; background-color: #e0e0e0;">
+			<h1>Section 2</h1>
+			<p>More content...</p>
+		</section>
+		<section style="height: 100vh; background-color: #d0d0d0;">
+			<h1>Section 3</h1>
+			<p>Even more content...</p>
+		</section>
+	</main>
 
-
-		</div>
-	</div>
-	<!-- Intro -->
-	<div class="carousel-container">
-		<div class="photo-carousel">
-			<div class="carousel-slide"><img src="images/one.jpg" alt="Image 1"></div>
-			<div class="carousel-slide"><img src="images/two.jpg" alt="Image 2"></div>
-			<div class="carousel-slide"><img src="images/intro.jpg" alt="Image 3"></div>
-			<!-- Add more images as needed -->
-		</div>
-		<div class="carousel-nav">
-			<button class="prev-button">Previous</button>
-			<button class="next-button">Next</button>
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<div class="contact">
-		<h2 class="h2-big">Vieni a trovarci</h2>
-		<p class="paragraph-big">Ne jemi të vendosur në qendër të Torinos, duke ofruar një atmosferë të ngrohtë dhe mikpritëse për të gjithë vizitorët tanë. <br> Corso Duca degli Abruzzi, 55, 10129, Torino, Italia</p>
-		<div class="google-map">
-			<iframe 
-			  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.245240966203!2d7.677111315545973!3d45.06388897909827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d7d58f4e1c1%3A0x5a0f8f8f8f8f8f8f!2sCorso%20Duca%20degli%20Abruzzi%2C%2055%2C%2010129%20Torino%20TO%2C%20Italia!5e0!3m2!1sen!2sus!4v1712345678901"
-			  width="600" 
-			  height="450" 
-			  style="border:0;" 
-			  allowfullscreen="" 
-			  loading="lazy" 
-			  referrerpolicy="no-referrer-when-downgrade"
-			  aria-label="Google Maps location of Caffè Duca">
-			</iframe>
-		  </div>
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.poptrox.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+	<!-- Load GSAP before main.js -->
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+	<script src="./assets/js/main.js"></script>
 </body>
 
 </html>
