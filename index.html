@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="it">
 
 <head>
@@ -8,66 +8,156 @@
 	<meta name="author" content="Eand Avdiu">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" type="image/svg" href="./assets/favicon/Caffe_DUCA_favicon.svg" />
+	<link rel="icon" type="image/svg+xml" href="./assets/favicon/Caffe_DUCA_favicon.svg" />
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-	href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-	rel="stylesheet" />
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	<!-- Custom styles -->
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<!-- Bootstrap -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="output.css" />
 </head>
 
-<body>
+<body class="font-sans antialiased text-gray-900">
 
 	<!-- Header Section (Welcome Area) -->
-	<header id="hero">
-		<!-- Logo (Use an actual SVG file) -->
-		<img src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Site Logo" id="logo">
+	<header class="fixed top-0 left-0 w-full z-50">
 
-		<!-- Background Image is set via CSS -->
+		<!-- Navigation Bar -->
+		<nav class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent text-white">
+
+			<!-- Logo(Left) -->
+			<a href="#" class="">
+				<img src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Logo" class="h-auto w-22"></i>
+			</a>
+
+			<!-- Hamburger Button(Right, visible only on small screens) -->
+			<button id="hamburger" class="md:hidden menu-btn z-55 focus:outline-none" aria-label="Toggle menu">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+
+			<aside id="nav-links" class="hidden md:flex space-x-6">
+				<a href="#welcome" class="hover:text-gray-200">Info</a>
+				<a href="#menu" class="hover:text-gray-200">Menu</a>
+				<a href="#about" class="hover:text-gray-200">About</a>
+				<a href="#contact" class="hover:text-gray-200">Contact</a>
+			</aside>
+		</nav>
+		<!-- Mobile Slide-In Menu(Default: Hidden)-->
+		<div id="mobile-menu"
+			class="fixed inset-0 flex items-center justify-center bg-opacity-90 bg-cyan-900 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+			<nav class="flex flex-col items-center my-8 space-y-8 ">
+				<a href="#welcome" class="text-white text-4xl hover:text-gray-200">Info</a>
+				<a href="#menu" class="text-white text-3xl hover:text-gray-200">Menu</a>
+				<a href="#about" class="text-white text-3xl hover:text-gray-200">About</a>
+				<a href="#contact" class="text-white text-3xl hover:text-gray-200">Contact</a>
+			</nav>
+		</div>
+
+		<div id="overlay" class="fixed top-0 left-0 w-full h-full hidden z-50"></div>
+
 	</header>
 
-	<!-- Hamburger Menu Button -->
-	<button id="menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="main-nav">
-		<span></span>
-		<span></span>
-		<span></span>
-	</button>
 
-	<!-- Navigation Menu (Initially Hidden) -->
-	<nav id="main-nav">
-		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-	</nav>
+	<main class="bg-cyan-700">
 
-	<!-- Main Content Area -->
-	<main>
-		<section style="height: 100vh; background-color: #f0f0f0;">
-			<h1>Section 1</h1>
-			<p>Scroll down to see the effect...</p>
-			<p>Lots of content here...</p>
+		<!-- Hero Section -->
+		<section id="hero" class="relative h-screen w-full overflow-hidden">
+			<img src="./images/one.jpg" alt="Hero Image" class="absolute inset-0 object-cover w-full h-full" />
 		</section>
-		<section style="height: 100vh; background-color: #e0e0e0;">
-			<h1>Section 2</h1>
-			<p>More content...</p>
+
+		<!-- Welcome Section -->
+		<section id="welcome" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6">
+			<div class="text-center text-white mb-10">
+				<h1 class="text-5xl font-bold mb-4">Questo è Caffe Duca</h1>
+				<p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
+					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
+					doloremque eum amet ad officia? Pariatur!</p>
+			</div>
+
+			<!-- Photo Gallery -->
+			<div class="w-full max-w-5xl">
+				<div class="relative overflow-hidden">
+					<!-- Gallery Container -->
+					<div id="gallery-container" class="flex transition-transform duration-500 ease-out">
+						<!-- Gallery Images -->
+						<div class="gallery-slide min-w-full px-2">
+							<img src="./images/intro.jpg" alt="Caffe Duca Gallery 1"
+								class="w-full h-64 object-cover rounded-lg">
+						</div>
+						<div class="gallery-slide min-w-full px-2">
+							<img src="./images/two.jpg" alt="Caffe Duca Gallery 2"
+								class="w-full h-64 object-cover rounded-lg">
+						</div>
+						<div class="gallery-slide min-w-full px-2">
+							<img src="./images/9612660.png" alt="Caffe Duca Gallery 3"
+								class="w-full h-64 object-cover rounded-lg">
+						</div>
+						<div class="gallery-slide min-w-full px-2">
+							<img src="./images/62d53d99b24bb232731c4c92_gemma-cocktail.svg" alt="Caffe Duca Gallery 4"
+								class="w-full h-64 object-cover rounded-lg">
+						</div>
+					</div>
+
+					<!-- Dots Indicator -->
+					<div id="gallery-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+						<!-- Dots will be added dynamically by JavaScript -->
+					</div>
+				</div>
+			</div>
 		</section>
-		<section style="height: 100vh; background-color: #d0d0d0;">
-			<h1>Section 3</h1>
-			<p>Even more content...</p>
+
+		<!-- Menu Section -->
+		<section id="menu" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6 ">
+			<div class="text-center text-white">
+				<h1 class="text-5xl font-bold mb-4">Il nostro Menu</h1>
+				<p class="text-lg mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
+					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
+					doloremque eum amet ad officia? Pariatur!</p>
+				<a href="./Lorem_ipsum.pdf" download="Lorem_ipsum.pdf"
+					class="bg-pink-300 hover:bg-pink-500 font-extrabold py-1.5 px-3 rounded">Scoprilo ora!</a>
+			</div>
 		</section>
+
+		<!-- About Section -->
+		<section id="about" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6">
+			<div class="text-center text-white">
+				<h1 class="text-5xl font-bold mb-4">Chi siamo</h1>
+				<p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
+					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
+					doloremque eum amet ad officia? Pariatur!</p>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer class="relative bg-emerald-800 px-6 py-6">
+			<div class="mt-4 text-white">
+				<p>&copy; 2023 Caffè Duca. All rights reserved.</p>
+				<p>Via Roma, 123, Torino, Italia</p>
+				<p>Telefono: +39 0123 456789</p>
+			</div>
+			<div class="absolute flex space-x-4 mt-4 bottom-6 right-6">
+				<!-- Instagram -->
+				<a href="https://www.instagram.com/caffeducatorino/" aria-label="Instagram" target="_blank"
+					rel="noopener">
+					<i class="fa-brands fa-instagram fa-xl"></i>
+				</a>
+
+				<!-- Facebook -->
+				<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Facebook" target="_blank" rel="noopener">
+					<i class="fa-brands fa-facebook-f fa-xl"></i>
+				</a>
+
+				<!-- WhatsApp -->
+				<a href="https://wa.me/3483156301" aria-label="WhatsApp" target="_blank" rel="noopener">
+					<i class="fa-brands fa-whatsapp fa-xl"></i>
+				</a>
+			</div>
+		</footer>
 	</main>
 
 	<!-- Load GSAP before main.js -->
