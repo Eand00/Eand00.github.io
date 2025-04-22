@@ -27,11 +27,13 @@
 	<header class="fixed top-0 left-0 w-full z-50">
 
 		<!-- Navigation Bar -->
-		<nav class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent text-white">
+		<nav id="main-nav"
+			class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent text-white">
 
 			<!-- Logo(Left) -->
-			<a href="#" class="">
-				<img src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Logo" class="h-auto w-22"></i>
+			<a id="nav-logo-placeholder" href="#" class="">
+				<img id="nav-logo-img" src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Logo"
+					class="h-auto w-22 opacity-0"></i>
 			</a>
 
 			<!-- Hamburger Button(Right, visible only on small screens) -->
@@ -42,26 +44,60 @@
 			</button>
 
 			<aside id="nav-links" class="hidden md:flex space-x-6">
-				<a href="#welcome" class="hover:text-gray-200">Info</a>
+				<a href="#welcome" class="hover:text-gray-200">Benvenuto!</a>
+				<a href="#specialita" class="hover:text-gray-200">Specialità</a>
 				<a href="#menu" class="hover:text-gray-200">Menu</a>
-				<a href="#about" class="hover:text-gray-200">About</a>
-				<a href="#contact" class="hover:text-gray-200">Contact</a>
+				<a href="#galleria" class="hover:text-gray-200">Galleria</a>
+				<a href="#about" class="hover:text-gray-200">Chi Siamo</a>
+				<a href="#location" class="hover:text-gray-200">Dove Trovarci</a>
+				<a href="#contact" class="hover:text-gray-200">Contatti</a>
 			</aside>
 		</nav>
 		<!-- Mobile Slide-In Menu(Default: Hidden)-->
 		<div id="mobile-menu"
-			class="fixed inset-0 flex items-center justify-center bg-opacity-90 bg-cyan-900 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-			<nav class="flex flex-col items-center my-8 space-y-8 ">
-				<a href="#welcome" class="text-white text-4xl hover:text-gray-200">Info</a>
-				<a href="#menu" class="text-white text-3xl hover:text-gray-200">Menu</a>
-				<a href="#about" class="text-white text-3xl hover:text-gray-200">About</a>
-				<a href="#contact" class="text-white text-3xl hover:text-gray-200">Contact</a>
+			class="fixed inset-0 flex items-center justify-center bg-opacity-90 bg-cyan-900 transform translate-x-full transition-transform duration-300 ease-in-out z-50 p-8 pb-24 text-white">
+
+
+			<nav class="flex flex-col items-center my-8 space-y-6  text-3xl">
+				<a href="#hero">
+					<img src="./assets/favicon/Caffe_DUCA_favicon.svg" alt="Caffè Duca Logo" class="h-24 w-auto mb-8">
+				</a>
+				<a href="#welcome" class="hover:text-gray-200">Benvenuto!</a>
+				<a href="#specialita" class="hover:text-gray-200">Specialità</a>
+				<a href="#menu" class="hover:text-gray-200">Menu</a>
+				<a href="#galleria" class="hover:text-gray-200">Galleria</a>
+				<a href="#about" class="hover:text-gray-200">Chi Siamo</a>
+				<a href="#location" class="hover:text-gray-200">Dove Trovarci</a>
+				<a href="#contact" class="hover:text-gray-200">Contatti</a>
 			</nav>
+
+			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-20 mt-auto">
+				<!-- Instagram -->
+				<a href="https://www.instagram.com/caffeducatorino/" aria-label="Instagram" target="_blank"
+					rel="noopener">
+					<i class="fa-brands fa-instagram fa-2xl"></i>
+				</a>
+
+				<!-- Facebook -->
+				<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Facebook" target="_blank" rel="noopener">
+					<i class="fa-brands fa-facebook-f fa-2xl"></i>
+				</a>
+
+				<!-- WhatsApp -->
+				<a href="https://wa.me/3483156301" aria-label="WhatsApp" target="_blank" rel="noopener">
+					<i class="fa-brands fa-whatsapp fa-2xl"></i>
+				</a>
+			</div>
 		</div>
-
-		<div id="overlay" class="fixed top-0 left-0 w-full h-full hidden z-50"></div>
-
 	</header>
+
+	<!-- The Moving Logo Element -->
+	<div id="moving-logo-container" class="fixed z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+		<img id="moving-logo" src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Caffè Duca Logo"
+			class="block h-auto w-40">
+		<!-- NOTE: Adjust w-[150px] to your desired INITIAL logo width -->
+	</div>
+
 
 
 	<main class="bg-cyan-700">
@@ -72,12 +108,16 @@
 		</section>
 
 		<!-- Welcome Section -->
-		<section id="welcome" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6">
+		<section id="welcome" class="relative flex flex-col items-center justify-center bg-cyan-800 h-screen px-6">
 			<div class="text-center text-white mb-10">
 				<h1 class="text-5xl font-bold mb-4">Questo è Caffe Duca</h1>
-				<p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
-					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
-					doloremque eum amet ad officia? Pariatur!</p>
+				<p class="text-lg">
+					Benvenuti a Caffè Duca, il vostro angolo di piacere nel cuore pulsante di Torino. Da noi, la
+					passione per il caffè di alta qualità si unisce a un'atmosfera calda e accogliente. Che sia per una
+					pausa veloce, un incontro di lavoro o un momento di relax, troverete sempre un sorriso e prodotti
+					freschi, dai nostri espressi aromatici ai dolci artigianali e alle proposte leggere per il pranzo.
+					Venite a scoprire il vostro nuovo posto preferito in città.
+				</p>
 			</div>
 
 			<!-- Photo Gallery -->
@@ -112,35 +152,171 @@
 			</div>
 		</section>
 
+		<!-- Specialities -->
+		<section id="specialita"
+			class="relative flex flex-col items-center justify-center min-h-screen px-8 py-16 text-white">
+			<div class="text-center max-w-4xl">
+				<h2 class="text-5xl font-bold mb-6">Le Nostre Specialità</h2>
+				<p class="text-lg mb-10">
+					Ogni giorno mettiamo passione in quello che facciamo. Ecco alcuni dei nostri prodotti più amati,
+					preparati con cura utilizzando solo ingredienti di prima scelta.
+				</p>
+
+				<!-- Specialties Grid -->
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Specialty 1 (Example) -->
+					<div class="bg-white/10 p-6 rounded-lg">
+						<img src="./images/fulls/01.jpg" alt="Caffè Speciale" class="h-44 w-44 mx-auto mb-4">
+						<h3 class="text-2xl font-semibold mb-3">Caffè Monorigine</h3>
+						<p class="text-base">
+							Selezioniamo i migliori chicchi monorigine per offrirvi un'esperienza di gusto unica e
+							ricercata. Chiedete al banco la selezione del giorno!
+						</p>
+					</div>
+
+					<!-- Specialty 2 (Example) -->
+					<div class="bg-white/10 p-6 rounded-lg">
+						<img src="./images/fulls/02.jpg" alt="Dolci Artigianali" class="h-44 w-44 mx-auto mb-4">
+						<h3 class="text-2xl font-semibold mb-3">Dolci Fatti in Casa</h3>
+						<p class="text-base">
+							Dalle torte della nonna ai croissant fragranti, i nostri dolci sono preparati freschi ogni
+							giorno nel nostro laboratorio.
+						</p>
+					</div>
+
+					<!-- Specialty 3 (Example) -->
+					<div class="bg-white/10 p-6 rounded-lg">
+						<img src="./images/fulls/03.jpg" alt="Aperitivo Duca" class="h-44 w-44 mx-auto mb-4">
+						<h3 class="text-2xl font-semibold mb-3">Aperitivo Duca</h3>
+						<p class="text-base">
+							Godetevi il tramonto con i nostri cocktail esclusivi e un ricco buffet di stuzzichini
+							preparati con prodotti locali.
+						</p>
+					</div>
+				</div>
+				<!-- End Specialties Grid -->
+			</div>
+		</section>
+
 		<!-- Menu Section -->
-		<section id="menu" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6 ">
+		<section id="menu" class="relative flex flex-col items-center justify-center h-screen px-6 ">
 			<div class="text-center text-white">
 				<h1 class="text-5xl font-bold mb-4">Il nostro Menu</h1>
-				<p class="text-lg mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
-					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
-					doloremque eum amet ad officia? Pariatur!</p>
+				<p class="text-lg mb-5">
+					Dalla prima colazione all'aperitivo serale, il nostro menu è un viaggio nei sapori autentici.
+					Gustate i nostri caffè speciali, selezionati con cura, accompagnati da brioche fragranti e torte
+					fatte in casa. Per pranzo, offriamo insalate fresche, panini gourmet e piatti del giorno. E al calar
+					della sera, lasciatevi tentare dai nostri cocktail e stuzzichini per un perfetto aperitivo torinese.
+					La qualità e la freschezza sono i nostri ingredienti principali.
+				</p>
 				<a href="./Lorem_ipsum.pdf" download="Lorem_ipsum.pdf"
-					class="bg-pink-300 hover:bg-pink-500 font-extrabold py-1.5 px-3 rounded">Scoprilo ora!</a>
+					class="bg-[#bcb42d] hover:bg-yellow-500 font-extrabold py-1.5 px-3 rounded">Scoprilo ora!</a>
+			</div>
+		</section>
+
+		<!-- Gallery Section -->
+		<section id="galleria"
+			class="relative flex flex-col items-center justify-center min-h-screen bg-cyan-600/80 px-6 py-16 text-white">
+			<div class="text-center w-full max-w-6xl">
+				<h2 class="text-5xl font-bold mb-6">Uno Sguardo al Caffè Duca</h2>
+				<p class="text-lg mb-10">
+					Scoprite l'atmosfera del nostro locale attraverso alcuni scatti: dai dettagli dell'arredamento ai
+					colori vivaci dei nostri piatti e drink.
+				</p>
+
+				<!-- Image Grid -->
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+					<!-- Replace with actual image paths and alt text -->
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/01.jpg"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/02.jpg" alt="Dettaglio Caffè"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/03.jpg" alt="Torta Fatta in Casa"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/04.jpg" alt="Aperitivo al Caffè Duca"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/05.jpg" alt="Esterno Caffè Duca"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<div class="aspect-square overflow-hidden rounded-lg">
+						<img src="./images/thumbs/06.jpg" Il Team del Caffè Duca"
+							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+					</div>
+					<!-- Add more images as needed -->
+				</div>
+				<!-- End Image Grid -->
 			</div>
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="relative flex flex-col items-center justify-center h-screen bg-opacity-50 px-6">
+		<section id="about" class="relative flex flex-col items-center justify-center bg-cyan-800 h-screen px-6">
 			<div class="text-center text-white">
 				<h1 class="text-5xl font-bold mb-4">Chi siamo</h1>
-				<p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem magnam vero,
-					cum repellat quas sint maxime? Fugit, neque. Corrupti, architecto expedita vel ullam porro
-					doloremque eum amet ad officia? Pariatur!</p>
+				<p class="text-lg">
+					Caffè Duca non è solo un bar, è una storia di passione per l'ospitalità e per le cose buone,
+					radicata nel cuore di Torino. Il nostro obiettivo è creare un ambiente familiare e raffinato, dove
+					ogni cliente si senta a casa. Crediamo nella qualità delle materie prime, nella cura dei dettagli e
+					nel valore di un sorriso. Vogliamo essere il vostro punto di riferimento quotidiano, un luogo dove
+					tradizione e modernità si incontrano nel gusto di un ottimo caffè.
+				</p>
 			</div>
 		</section>
-		<!-- Footer -->
-		<footer class="relative bg-emerald-800 px-6 py-6">
-			<div class="mt-4 text-white">
-				<p>&copy; 2023 Caffè Duca. All rights reserved.</p>
-				<p>Via Roma, 123, Torino, Italia</p>
-				<p>Telefono: +39 0123 456789</p>
+
+
+		<!-- Dove Trovarci Section -->
+		<section id="location"
+			class="relative flex flex-col lg:flex-row items-center justify-center min-h-[70vh] h-screen bg-cyan-600/80 text-white px-6 py-16">
+			<!-- Text Content -->
+			<div class="lg:w-1/2 text-center lg:text-left lg:pr-10 mb-10 lg:mb-0">
+				<h2 class="text-5xl font-bold mb-6">Dove Trovarci</h2>
+				<p class="text-lg mb-4">
+					Venite a trovarci nel cuore di Torino per una pausa caffè, un pranzo veloce o un aperitivo in
+					compagnia.
+				</p>
+				<p class="text-xl font-semibold mb-2">
+					Caffè Duca<br>
+					Corso Duca degli Abruzzi, 55<br>
+					10129 Torino TO
+				</p>
+				<p class="text-lg">
+					Orari: <span class="font-semibold">Lun-Sab: 6:00 - 22:00, Dom: 8:00 - 20:00</span>
+				</p>
 			</div>
-			<div class="absolute flex space-x-4 mt-4 bottom-6 right-6">
+
+			<!-- Map Embed -->
+			<div class="w-full lg:w-1/2 h-64 lg:h-96 rounded-lg overflow-hidden shadow-xl">
+				<!-- Adjust width="100%" and height="100%" in the iframe tag. -->
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.400793232743!2d7.6570292766359085!3d45.057380160489785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d236f53da81%3A0x16032d8bc48a3a9b!2sCaff%C3%A8%20Duca!5e0!3m2!1sen!2sit!4v1745341351544!5m2!1sen!2sit"
+					width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade" title="Mappa Caffè Duca">
+				</iframe>
+				<!-- === End Google Maps Embed === -->
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer" class="relative bg-emerald-800 px-6 py-6">
+			<div id="contact" class="mt-4 text-white text-sm">
+				<p>&copy; 2023 Caffè Duca. All rights reserved.</p>
+				<p>
+					Caffè Duca<br>
+					Corso Duca degli Abruzzi, 55<br>
+					10129 Torino TO
+				</p>
+				<p>Telefono: +39 0123 456789</p>
+				<p>Orari di Apertura: Lun-Sab: 6:00 - 22:00, Dom: 8:00 - 20:00</p>
+			</div>
+			<div class="absolute flex space-x-4 bottom-14 right-6">
 				<!-- Instagram -->
 				<a href="https://www.instagram.com/caffeducatorino/" aria-label="Instagram" target="_blank"
 					rel="noopener">

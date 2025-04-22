@@ -1,56 +1,76 @@
 @import "tailwindcss";
 
-/* Update hamburger animation to be more consistent */
-.hamburger-line {
-    @apply block w-8 h-1 my-1.5 bg-white transition-all duration-300 relative;
-}
+@layer components {
+    .hamburger-line {
+        @apply block w-8 h-1 my-1.5 bg-white transition-all duration-300 relative;
+    }
 
-.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 8px);
-}
+    .active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 8px);
+    }
 
-.active .hamburger-line:nth-child(2) {
-    @apply opacity-0;
-}
+    .active .hamburger-line:nth-child(2) {
+        @apply opacity-0;
+    }
 
-.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -8px);
-}
+    .active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -8px);
+    }
 
-/* Gallery Styles */
-.gallery-slide {
-    transition: opacity 0.3s ease;
-    user-select: none;
-    -webkit-user-drag: none;
-}
+    .gallery-slide {
+        transition: opacity 0.3s ease;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
 
-#gallery-container {
-    scroll-snap-type: x mandatory;
-    touch-action: pan-y;
-}
+    #gallery-container {
+        scroll-snap-type: x mandatory;
+        touch-action: pan-y;
+    }
 
-.gallery-slide {
-    scroll-snap-align: start;
-}
+    .gallery-slide {
+        scroll-snap-align: start;
+    }
 
-#gallery-dots button {
-    transition: opacity 0.3s ease;
-    @apply w-3 h-3 bg-white rounded-full mx-1;
-}
+    #gallery-dots button {
+        transition: opacity 0.3s ease;
+        @apply w-3 h-3 bg-white rounded-full mx-1;
+    }
 
-#gallery-dots button:hover {
-    @apply opacity-75;
-}
+    #gallery-dots button:hover {
+        @apply opacity-75;
+    }
 
-#gallery-container img {
-    pointer-events: none;
-}
+    #gallery-container img {
+        pointer-events: none;
+    }
 
-/* Social media icons */
-footer a {
-    @apply text-white hover:text-gray-300 transition-colors;
-}
+    footer a {
+        @apply text-white hover:text-gray-300 transition-colors;
+    }
 
-footer .fa-brands {
-    @apply text-2xl;
+    footer .fa-brands {
+        @apply text-2xl;
+    }
+
+    .animate-bounce {
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: translateY(-25%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+
+        50% {
+            transform: translateY(0);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+}
+#moving-logo-container {
+    will-change: top, left, width, transform;
 }
