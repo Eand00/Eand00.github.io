@@ -2,113 +2,133 @@
 <html lang="it">
 
 <head>
-	<title>Caffè Duca</title>
+	<title>Caffè Duca - La Tradizionale a Torino</title>
 	<meta name="description"
 		content="Caffè Duca è un bar situato nel cuore di Torino, noto per la sua atmosfera accogliente e la vasta selezione di caffè, dolci e piatti leggeri." />
 	<meta name="author" content="Eand Avdiu">
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/svg+xml" href="./assets/favicon/Caffe_DUCA_favicon.svg" />
+
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet" />
+
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="output.css" />
 </head>
 
-<body class="font-sans antialiased text-gray-900">
+<body class="font-sans antialiased text-gray-900 bg-cyan-700">
 
 	<!-- Header Section (Welcome Area) -->
-	<header class="fixed top-0 left-0 w-full z-50">
-
+	<header class="fixed top-0 left-0 w-full z-50 text-white" aria-label="Intestazione principale">
 		<!-- Navigation Bar -->
 		<nav id="main-nav"
-			class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent text-white">
+			class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent transition-colors duration-300 ease-in-out"
+			aria-label="Navigazione principale">
 
 			<!-- Logo(Left) -->
-			<a id="nav-logo-placeholder" href="#" class="">
-				<img id="nav-logo-img" src="./assets/favicon/Caffe_DUCA_icon2.svg" alt="Logo"
-					class="h-auto w-22 text-white"></img>
+			<a id="nav-logo" href="#" aria-label="Torna alla homepage">
+				<img id="nav-logo-img" src="./assets/favicon/Caffe_DUCA_icon2.svg" alt="Logo Caffè Duca"
+					class="h-auto w-22 text-white transition-opacity duration-200">
 			</a>
 
-			<!-- Hamburger Button(Right, visible only on small screens) -->
-			<button id="hamburger" class="md:hidden menu-btn z-55 focus:outline-none" aria-label="Toggle menu">
+			<!-- Desktop Navigation Links -->
+			<div id="nav-links" class="hidden md:flex items-center space-x-4 lg:space-x-6">
+				<a href="#specialita" class="hover:text-gray-300 px-2 py-1">Specialità</a>
+				<a href="#menu" class="hover:text-gray-300 px-2 py-1">Menu</a>
+				<a href="#galleria" class="hover:text-gray-300 px-2 py-1">Galleria</a>
+				<a href="#about" class="hover:text-gray-300 px-2 py-1">Per saperne di più</a>
+				<a href="#location" class="hover:text-gray-300 px-2 py-1">Dove Trovarci</a>
+				<a href="#contact" class="hover:text-gray-300 px-2 py-1">Contatti</a>
+			</div>
+
+			<!-- Hamburger Button (Mobile) -->
+			<button id="hamburger" type="button" class="md:hidden menu-btn z-[55] focus:outline-none p-2 -mr-2"
+				aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-menu-content">
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
 			</button>
-
-			<aside id="nav-links" class="hidden md:flex space-x-6">
-				<a href="#specialita" class="hover:text-gray-200">Specialità</a>
-				<a href="#menu" class="hover:text-gray-200">Menu</a>
-				<a href="#galleria" class="hover:text-gray-200">Galleria</a>
-				<a href="#about" class="hover:text-gray-200">Per saperne di più</a>
-				<a href="#location" class="hover:text-gray-200">Dove Trovarci</a>
-				<a href="#contact" class="hover:text-gray-200">Contatti</a>
-			</aside>
 		</nav>
-		<!-- Mobile Slide-In Menu(Default: Hidden)-->
+
+		<!-- Mobile Slide-In Menu -->
 		<div id="mobile-menu"
-			class="fixed inset-0 flex items-center justify-center bg-opacity-90 bg-cyan-900 transform translate-x-full transition-transform duration-300 ease-in-out z-50 p-8 pb-24 text-white">
+			class="fixed inset-0 flex flex-col items-center justify-center bg-cyan-900 bg-opacity-95 transform translate-x-full transition-transform duration-300 ease-in-out z-[51] p-8 text-white"
+			aria-hidden="true" role="dialog" aria-labelledby="mobile-menu-title">
 
-			<nav class="flex flex-col items-center my-8 space-y-6  text-3xl">
-				<a href="#hero">
-					<img src="./assets/favicon/Caffe_DUCA_favicon.svg" alt="Caffè Duca Logo" class="h-24 w-auto mb-8">
+			<div class="w-full max-w-xs mx-auto text-center">
+				<h2 id="mobile-menu-title" class="sr-only">Menu di Navigazione Mobile</h2> <!-- For screen readers -->
+
+				<a href="#hero" class="block mb-12" aria-label="Torna alla homepage">
+					<img src="./assets/favicon/Caffe_DUCA_favicon.svg" alt="Logo Caffè Duca"
+						class="h-44 w-auto mx-auto">
 				</a>
-				<a href="#specialita" class="hover:text-gray-200">Specialità</a>
-				<a href="#menu" class="hover:text-gray-200">Menu</a>
-				<a href="#galleria" class="hover:text-gray-200">Galleria</a>
-				<a href="#about" class="hover:text-gray-200">Per saperne di più</a>
-				<a href="#location" class="hover:text-gray-200">Dove Trovarci</a>
-				<a href="#contact" class="hover:text-gray-200">Contatti</a>
-			</nav>
 
+				<!-- Mobile Navigation Links -->
+				<nav id="mobile-menu-content" class="flex flex-col items-center space-y-5 text-2xl">
+					<a href="#specialita" class="py-2">Specialità</a>
+					<a href="#menu" class="py-2">Menu</a>
+					<a href="#galleria" class="py-2">Galleria</a>
+					<a href="#about" class="py-2">Per saperne di più</a>
+					<a href="#location" class="py-2">Dove Trovarci</a>
+					<a href="#contact" class="py-2">Contatti</a>
+				</nav>
+			</div>
 			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-20 mt-auto">
+
 				<!-- Instagram -->
-				<a href="https://www.instagram.com/caffeduca/" aria-label="Instagram" target="_blank"
+				<a href="https://www.instagram.com/caffeduca/" aria-label="Seguici su Instagram" target="_blank"
 					rel="noopener">
 					<i class="fa-brands fa-instagram fa-2xl"></i>
 				</a>
 
 				<!-- Facebook -->
-				<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Facebook" target="_blank" rel="noopener">
+				<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Seguici su Facebook" target="_blank"
+					rel="noopener">
 					<i class="fa-brands fa-facebook-f fa-2xl"></i>
 				</a>
 
 				<!-- WhatsApp -->
-				<a href="https://wa.me/3483156301" aria-label="WhatsApp" target="_blank" rel="noopener">
+				<a href="https://wa.me/3483156301" aria-label="Contattaci su WhatsApp" target="_blank"
+					rel="noopener noreferrer">
 					<i class="fa-brands fa-whatsapp fa-2xl"></i>
 				</a>
 			</div>
 		</div>
 	</header>
 
-	<!-- The Moving Logo Element -->
-	<div id="moving-logo-container" class="fixed z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+	<!-- The Moving Logo Element (For GSAP Animation) -->
+	<div id="moving-logo-container"
+		class="fixed z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
 		<img id="moving-logo" src="./assets/favicon/Caffe_DUCA_icon2.svg" alt="Caffè Duca Logo"
 			class="block h-auto w-40">
-		<!-- NOTE: Adjust w-[150px] to your desired INITIAL logo width -->
 	</div>
 
-
-
-	<main class="bg-cyan-700">
+	<!-- Main Content -->
+	<main class="">
 
 		<!-- Hero Section -->
-		<section id="hero" class="relative h-screen w-full overflow-hidden">
-			<img src="./images/Copia di Caffe_DUCA_Originale.pdf.png" alt="Hero Image" class="absolute inset-0 object-cover w-full h-full" />
+		<section id="hero" class="relative h-screen w-full overflow-hidden" aria-labelledby="hero-title">
+			<img src="./images/Copia di Caffe_DUCA_Originale.pdf.png" alt="Benvenuti al Caffè Duca"
+				class="absolute inset-0 object-cover w-full h-full" />
 		</section>
 
 		<!-- Welcome Section -->
-		<section id="welcome" class="relative flex flex-col items-center justify-center bg-cyan-800 h-screen px-6">
-			<div class="text-center text-white mb-10">
-				<h1 class="text-5xl font-bold mb-4">Questo è Caffe Duca</h1>
-				<p class="text-lg">
+		<section id="welcome"
+			class="relative flex flex-col items-center justify-center bg-cyan-800 min-h-screen px-6 py-16 sm:py-24"
+			aria-labelledby="welcome-heading">
+			<div class="text-center text-white max-w-3xl mx-auto">
+				<h1 id="welcome-heading" class="text-4xl sm:text-5xl font-bold mb-6">Questo è Caffe Duca</h1>
+				<p class="text-lg sm:text-xl leading-relaxed">
 					Il Caffé Duca, al servizio della città dal 1972, affonda le proprie radici nella tradizione torinese
 					tramandata, fino ai nostri giorni, di famiglia in famiglia.
 					Ed oggi, ancora una volta, si rinnova nel gusto, ma non nella forma, distinguendosi per
@@ -117,32 +137,36 @@
 				</p>
 			</div>
 
-			<!-- Photo Gallery -->
-			<div class="w-full max-w-5xl">
-				<div class="relative overflow-hidden">
+			<!-- Photo Gallery Slider (Welcome Section) -->
+			<div class="w-full max-w-4xl lg:max-w-5xl mt-12 sm:mt-16">
+				<div class="relative overflow-hidden rounded-lg">
 					<!-- Gallery Container -->
 					<div id="gallery-container" class="flex transition-transform duration-500 ease-out">
-						<!-- Gallery Images -->
-						<div class="gallery-slide min-w-full px-2">
+						<!-- Slide 1 -->
+						<div class="gallery-slide min-w-full p-1 md:p-2">
 							<img src="./images/ILE_4363.jpg" alt="Caffe Duca Gallery 1"
 								class="w-full h-96 object-cover rounded-lg">
 						</div>
-						<div class="gallery-slide min-w-full px-2">
+						<!-- Slide 2 -->
+						<div class="gallery-slide min-w-full p-1 md:p-2">
 							<img src="./images/ILE_4046.jpg" alt="Caffe Duca Gallery 2"
 								class="w-full h-96 object-cover rounded-lg">
 						</div>
-						<div class="gallery-slide min-w-full px-2">
+						<!-- Slide 3 -->
+						<div class="gallery-slide min-w-full p-1 md:p-2">
 							<img src="./images/ILE_3937.jpg" alt="Caffe Duca Gallery 3"
 								class="w-full h-96 object-cover rounded-lg">
 						</div>
-						<div class="gallery-slide min-w-full px-2">
+						<!-- Slide 4 -->
+						<div class="gallery-slide min-w-full p-1 md:p-2">
 							<img src="./images/ILE_4293.jpg" alt="Caffe Duca Gallery 4"
 								class="w-full h-96 object-cover rounded-lg">
 						</div>
 					</div>
 
 					<!-- Dots Indicator -->
-					<div id="gallery-dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+					<div id="gallery-dots"
+						class="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
 						<!-- Dots will be added dynamically by JavaScript -->
 					</div>
 				</div>
@@ -151,215 +175,293 @@
 
 		<!-- Specialities -->
 		<section id="specialita"
-			class="relative flex flex-col items-center justify-center min-h-screen px-8 py-16 text-white">
-			<div class="text-center max-w-4xl">
-				<h2 class="text-5xl font-bold mb-6">Le Nostre Specialità</h2>
-				<p class="text-lg mb-10">
+			class="relative flex flex-col items-center justify-center bg-cyan-700 min-h-screen px-6 sm:px-8 py-16 sm:py-24 text-white"
+			aria-labelledby="specialties-heading">
+			<div class="text-center max-w-5xl mx-auto">
+				<h2 id="specialties-heading" class="text-4xl sm:text-5xl font-bold mb-6">Le Nostre Specialità</h2>
+				<p class="text-lg sm:text-xl mb-12 sm:mb-16 leading-relaxed">
 					Ogni giorno uniamo alla nostra passione e all’incessante ricerca, solo prodotti di prima scelta e
 					ingredienti di migliore qualità.
 				</p>
 
 				<!-- Specialties Grid -->
-				<div class="grid md:grid-cols-3 gap-8">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 					<!-- Specialty 1(Caffe) -->
-					<div class="bg-white/10 p-6 rounded-lg">
-						<img src="./images/granos-cafe-cuchara-madera-vista-superior-granos-cafe_141793-6790.jpg" alt="Caffè" class="h-72  mx-auto mb-4 rounded-lg">
-						<h3 class="text-2xl font-semibold mb-3">Caffè</h3>
-						<p class="text-base">
+					<article class="bg-white/10 p-6 rounded-lg shadow-lg h-full flex flex-col">
+						<div class="overflow-hidden w-full h-80 rounded-md mb-3 flex items-center justify-center">
+							<img src="./images/granos-cafe-cuchara-madera-vista-superior-granos-cafe_141793-6790.jpg"
+								alt="Chicchi di caffè tostati" class="w-full  object-cover">
+						</div>
+						<h3 class="text-2xl sm:text-3xl font-semibold mb-3 border-b border-white/60 pb-3">Caffè</h3>
+						<p class="text-base sm:text-lg flex-grow">
 							Una miscela raffinata, nata dall'unione del miglior caffè brasiliano unito ai gusti dolci
 							delle qualita centro americanie. Un caffè 100% Arabica dal gusto e dall’aroma
 							particolarmente delicato in grado di mantenere comunque la corposità e la cremosità tipica
 							dei caffé più pregiati.
 						</p>
-					</div>
+					</article>
 
 					<!-- Specialty 2 (Desserts and chocolate) -->
-					<div class="bg-white/10 p-6 rounded-lg">
-						<img src="./images/cinquantenni-cioccolato-1.jpg" alt="Dolci e Cioccolata" class="h-72 mx-auto mb-4 rounded-lg">
-						<h3 class="text-2xl font-semibold mb-3">Dolci e Cioccolata</h3>
-						<p class="text-base">
+					<article class="bg-white/10 p-6 rounded-lg shadow-lg h-full flex flex-col">
+						<div class="overflow-hidden w-full h-80 rounded-md mb-3 flex items-center justify-center">
+							<img src="./images/cinquantenni-cioccolato-1.jpg" alt="Dolci e Cioccolata"
+								class="w-full  object-cover">
+						</div>
+						<h3 class="text-2xl sm:text-3xl font-semibold mb-3 border-b border-white/60 pb-3">Dolci e
+							Cioccolata</h3>
+						<p class="text-base sm:text-lg flex-grow">
 							Al caffé Duca troverete solo il cioccolato di migliore qualità, Criollo, Forastero e
 							Trinitario proveniente da tutto il mondo: Venezuela, Madagascar, Perú, Tanzania, Equador e
 							Colombia. Prodotti artigianali realizzati a mano e confezionati con la massima cura dai
 							migliori laboratori della città e non solo.
 						</p>
-					</div>
+					</article>
 
 					<!-- Specialty 3 (Aperitf) -->
-					<div class="bg-white/10 p-6 rounded-lg">
-						<img src="./images/ILE_4346.jpg" alt="Aperitivo Duca" class="h-72 mx-auto mb-4 rounded-lg">
-						<h3 class="text-2xl font-semibold mb-3">Aperitivo</h3>
-						<p class="text-base">
+					<article class="bg-white/10 p-6 rounded-lg shadow-lg h-full flex flex-col">
+						<div class="overflow-hidden w-full h-80 rounded-md mb-3 flex items-center justify-center">
+							<img src="./images/ILE_4346.jpg" alt="Aperitivo Duca" class="w-full  object-cover">
+						</div>
+						<h3 class="text-2xl sm:text-3xl font-semibold mb-3 border-b border-white/60 pb-3">Aperitivo</h3>
+						<p class="text-base sm:text-lg flex-grow">
 							Una drink List ricercata e una selezione di vini nazionali ed esteri capace di soddisfare
 							anche i palati più raffinati e poi naturalmente i nostri taglieri di specialità regionali,
 							le nostre tapas in grado di riproporre i sapori autentici delle ormai dimenticate merende
 							sinoire e poi ancora le tigelle, le focacce e tanto altro.
 						</p>
-					</div>
+					</article>
 				</div>
 				<!-- End Specialties Grid -->
 			</div>
 		</section>
 
 		<!-- Menu Section -->
-		<section id="menu" class="relative flex flex-col items-center justify-center h-100 px-6 ">
-			<div class="text-center text-white">
-				<h1 class="text-5xl font-bold mb-4 flex">I nostri Menu</h1>
-				<div id="menu-container"
-					class="flex flex-col md:flex-row items-center justify-center space-x-0 md:space-x-8 space-y-4 md:space-y-0 mb-10">
-
-					<a href="./assets/menu_plastificato.pdf" download="menu.pdf"
-						class="bg-[#bcb42d] hover:bg-yellow-500 font-extrabold py-1.5 px-3 rounded">Menu</a>
-					<a href="./assets/wine_list.pdf" download="Whine_list.pdf"
-						class="bg-[#bcb42d] hover:bg-yellow-500 font-extrabold py-1.5 px-3 rounded">Carta vini</a>
-
+		<section id="menu"
+			class="relative flex flex-col items-center justify-center bg-cyan-800 py-16 sm:py-24 px-6 text-white"
+			aria-labelledby="menu-heading">
+			<div class="text-center">
+				<h2 id="menu-heading" class="text-4xl sm:text-5xl font-bold mb-8">I Nostri Menu</h2>
+				<div id="menu-buttons-container"
+					class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+					<a href="./assets/menu_plastificato.pdf" download="Caffe_Duca_Menu.pdf"
+						class="bg-[#bcb42d] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-8 rounded-lg text-lg sm:text-xl transition-colors duration-200 shadow-md">
+						Menu Principale
+					</a>
+					<a href="./assets/wine_list.pdf" download="Caffe_Duca_Carta_Vini.pdf"
+						class="bg-[#bcb42d] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-8 rounded-lg text-lg sm:text-xl transition-colors duration-200 shadow-md">
+						Carta dei Vini
+					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- Gallery Section -->
+		<!-- Photo Gallery Grid Section -->
 		<section id="galleria"
-			class="relative flex flex-col items-center justify-center min-h-screen bg-cyan-600/80 px-6 py-16 text-white">
-			<div class="text-center w-full max-w-6xl">
-				<h2 class="text-5xl font-bold mb-6">Gallery</h2>
+			class="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 sm:py-24 text-white"
+			aria-labelledby="gallery-heading">
+			<div class="text-center w-full max-w-6xl mx-auto">
+				<h2 id="gallery-heading" class="text-4xl sm:text-5xl font-bold mb-10 sm:mb-12">Gallery</h2>
 				<!-- Image Grid -->
-				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-					<!-- Replace with actual image paths and alt text -->
+				<div id="main-photo-gallery" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+					<!-- @TODO: add alt to all images and change data-lightbox to webp version -->
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./images/ILE_4212.jpg"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+						<img src="./images/ILE_4212.jpg" data-lightbox-src="./images/ILE_4212.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./images/ILE_4227.jpg" alt="Dettaglio Caffè"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+						<img src="./images/ILE_4227.jpg" alt="Dettaglio Caffè" data-lightbox-src="./images/ILE_4227.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
 						<img src="./images/ILE_4334.jpg" alt="Torta Fatta in Casa"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+							data-lightbox-src="./images/ILE_4334.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
 						<img src="./images/ILE_4390.jpg" alt="Aperitivo al Caffè Duca"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+							data-lightbox-src="./images/ILE_4390.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
 						<img src="./images/ILE_3949.jpg" alt="Esterno Caffè Duca"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+							data-lightbox-src="./images/ILE_3949.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./images/ILE_4025.jpg" Il Team del Caffè Duca"
-							class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+						<img src="./images/ILE_4025.jpg" alt="Il Team del Caffè Duca"
+							data-lightbox-src="./images/ILE_4025.jpg"
+							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
-					<!-- Add more images as needed -->
 				</div>
 				<!-- End Image Grid -->
 			</div>
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="relative flex flex-col items-center justify-center bg-cyan-800 h-screen px-6">
-			<div class="text-center text-white">
-				<h1 class="text-5xl font-bold mb-4">Per saperne di più</h1>
-				<div class="w-full max-w-5xl">
-					<div class="relative overflow-hidden">
-						<!-- Gallery Container -->
-						<div id="gallery-container" class="flex transition-transform duration-500 ease-out">
-							<!-- Gallery Images -->
-							<div class="bg-white/10 p-6 rounded-lg gallery-slide">
-								<img src="./images/fulls/01.jpg" alt="Caffè" class="h-44 w-44 mx-auto mb-4">
-								<h3 class="text-2xl font-semibold mb-3">Caffè</h3>
-								<p class="text-base">
-									Una miscela raffinata, nata dall'unione del miglior caffè brasiliano unito ai gusti
-									dolci
-									delle qualita centro americanie. Un caffè 100% Arabica dal gusto e dall’aroma
-									particolarmente delicato in grado di mantenere comunque la corposità e la cremosità
-									tipica
-									dei caffé più pregiati.
-								</p>
-							</div>
-							<div id="gallery-dots"
-								class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-							</div>
-						</div>
+		<section id="about"
+			class="relative flex flex-col items-center justify-center bg-cyan-800 min-h-screen py-16 sm:py-24 px-6" aria-labelledby="about-heading">
+			<div class="text-center text-white w-full">
+				<h2 id="about-heading" class="text-4xl sm:text-5xl font-bold mb-10 sm:mb-12">Per saperne di più</h2>
+				<div class="w-full max-w-lg md:max-w-xl mx-auto"> <!-- A: Overall container for the slider component -->
 
-						<!-- Dots Indicator -->
-						<div id="gallery-dots"
-							class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-							<!-- Dots will be added dynamically by JavaScript -->
+					<!-- Slider Viewport -->
+					<div class="relative overflow-hidden rounded-lg mb-4">
+						<!-- B: Viewport -->
+						<div id="about-cards-container" class="flex transition-transform duration-500 ease-in-out">
+							<!-- Card Slide 1 -->
+							<article class="about-card-slide min-w-full p-1 md:p-2">
+								<div class="bg-white/10 p-6 rounded-lg h-full flex flex-col">
+									<img src="./images/ILE_3976.jpg" alt=""
+										class="w-full object-cover rounded-md mb-3">
+									<h3 class="text-2xl sm:text-3xl font-semibold mb-3 border-b border-white/60 pb-3">La
+                                        Nostra Filosofia</h3>
+									<p class="text-base">
+										Crediamo nella qualità senza compromessi, selezionando solo i migliori
+                                        ingredienti per ogni nostra creazione, dal caffè del mattino all'aperitivo
+                                        serale.
+									</p>
+								</div>
+							</article>
+							<!-- Card Slide 2 -->
+							<article class="about-card-slide min-w-full p-1 md:p-2">
+								<div class="bg-white/10 p-6 rounded-lg h-full flex flex-col">
+									<img src="./images/seconda foto.jpg" alt="Cioccolato"
+										class="w-full object-cover rounded-md mb-3">
+									<h3 class="text-2xl sm:text-3xl font-semibold mb-3 border-b border-white/60 pb-3">Un
+                                        Ambiente Unico</h3>
+									<p class="text-base">
+										Il Caffè Duca è più di un bar: è un luogo d'incontro, uno spazio dove tradizione
+                                        e innovazione si fondono per offrire un'esperienza indimenticabile.
+									</p>
+								</div>
+							</article>
+							<!-- Add more slides as needed -->
 						</div>
-					</div>
+					</div> <!-- End of Slider Viewport (B) -->
+
+					<!-- Dots Indicator for About Cards Slider -->
+					<div id="about-cards-dots" class="flex justify-center items-center space-x-2 py-2"></div>
+
 				</div>
 			</div>
 		</section>
 
 
-		<!-- Dove Trovarci Section -->
+		<!-- Location / Contact Section -->
 		<section id="location"
-			class="relative flex flex-col lg:flex-row items-center justify-center min-h-[70vh] h-screen bg-cyan-600/80 text-white px-6 py-16">
-			<!-- Text Content -->
-			<div class="lg:w-1/2 text-center lg:text-left lg:pr-10 mb-10 lg:mb-0">
-				<h2 class="text-5xl font-bold mb-6">Dove Trovarci</h2>
-				<p class="text-lg mb-4">
-					Venite a trovarci nel cuore di Torino per una pausa caffè, un pranzo veloce o un aperitivo in
-					compagnia.
-				</p>
-				<p class="text-xl font-semibold mb-2">
-					Caffè Duca<br>
-					Corso Duca degli Abruzzi, 55<br>
-					10129 Torino TO
-				</p>
-				<p class="text-lg">
-					Orari: <span class="font-semibold">Lun-Sab: 6:00 - 22:00, Dom: 8:00 - 20:00</span>
-				</p>
-			</div>
+			class="relative flex flex-col items-center justify-center bg-cyan-700 min-h-[80vh] px-6 py-16 sm:py-24 text-white" aria-labelledby="location-heading">
+			<div class="w-full mx-auto">
+				<div class="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+					<!-- Text Content -->
+					<div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+						<h2 id="location-heading" class="text-4xl sm:text-5xl font-bold mb-6">Dove Trovarci</h2>
+						<address>
+							<p class="text-lg sm:text-xl mb-4 leading-relaxed">
+								Venite a trovarci nel cuore di Torino per una pausa caffè, un pranzo veloce o un aperitivo in compagnia.
+							</p>
+							<p class="text-xl sm:text-2xl font-semibold mb-2">
+								Caffè Duca<br>
+								Corso Duca degli Abruzzi, 55<br>
+								10129 Torino TO
+							</p>
+						</address>
+						<p class="text-lg sm:text-xl mt-4">
+							<strong>Orari:</strong> Lun-Sab: 6:00 - 22:00, Dom: 8:00 - 20:00
+						</p>
+					</div>
 
-			<!-- Map Embed -->
-			<div class="w-full lg:w-1/2 h-64 lg:h-96 rounded-lg overflow-hidden shadow-xl">
-				<!-- Adjust width="100%" and height="100%" in the iframe tag. -->
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.400793232743!2d7.6570292766359085!3d45.057380160489785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d236f53da81%3A0x16032d8bc48a3a9b!2sCaff%C3%A8%20Duca!5e0!3m2!1sen!2sit!4v1745341351544!5m2!1sen!2sit"
-					width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade" title="Mappa Caffè Duca">
-				</iframe>
-				<!-- === End Google Maps Embed === -->
-			</div>
-			<div class="flex justify-evenly">
-				<!-- Instagram -->
-				<a href="https://www.instagram.com/caffeduca/" aria-label="Instagram" target="_blank"
-					rel="noopener">
-					<i class="fa-brands fa-instagram fa-xl"></i>
-				</a>
+					<!-- Map Embed -->
+					<div class="w-full lg:w-1/2 h-72 sm:h-80 md:h-96 rounded-lg overflow-hidden">
+						<!-- Added mb-8 for mobile -->
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.400793232743!2d7.6570292766359085!3d45.057380160489785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d236f53da81%3A0x16032d8bc48a3a9b!2sCaff%C3%A8%20Duca!5e0!3m2!1sen!2sit!4v1745341351544!5m2!1sen!2sit"
+							width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade" title="Mappa della posizione del Caffè Duca">
+						</iframe>
+					</div>
+				</div>
 
-				<!-- Facebook -->
-				<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Facebook" target="_blank" rel="noopener">
-					<i class="fa-brands fa-facebook-f fa-xl"></i>
-				</a>
-
-				<!-- WhatsApp -->
-				<a href="https://wa.me/3483156301" aria-label="WhatsApp" target="_blank" rel="noopener">
-					<i class="fa-brands fa-whatsapp fa-xl"></i>
-				</a>
+				<!-- Social Icons Div -->
+				<div class="flex justify-evenly gap-8 w-full pt-12">
+					<!-- Instagram -->
+					<a href="https://www.instagram.com/caffeduca/" aria-label="Seguici su Instagram" target="_blank"
+						rel="noopener noreferrer">
+						<i class="fa-brands fa-instagram fa-3x hover:text-gray-300"></i>
+					</a>
+					<!-- Facebook -->
+					<a href="https://www.facebook.com/CaffeDucaTorino" aria-label="Seguici su Facebook" target="_blank"
+						rel="noopener noreferrer">
+						<i class="fa-brands fa-facebook-f fa-3x hover:text-gray-300"></i>
+					</a>
+					<!-- WhatsApp -->
+					<a href="https://wa.me/3483156301" aria-label="Contattaci su WhatsApp" target="_blank" rel="noopener noreferrer">
+						<i class="fa-brands fa-whatsapp fa-3x hover:text-gray-300"></i>
+					</a>
+				</div>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer id="footer" class="bg-emerald-800 px-6 py-4 ">
-			<div id="contact" class="text-white text-sm">
-				<p>&copy; 2025 Caffè Duca. All rights reserved.</p>
-				<p>
-					Caffè Duca<br>
-					Corso Duca degli Abruzzi, 55<br>
-					10129 Torino TO
-				</p>
-				<p>Telefono: +39 0123 456789</p>
-				<p>Orari di Apertura: Lun-Sab: 6:00 - 22:00, Dom: 8:00 - 20:00</p>
-			</div>
+		<footer id="contact" class="bg-cyan-900 text-white py-8  px-6" aria-labelledby="footer-heading">
+			<div class="max-w-4xl mx-auto text-center sm:text-left">
+                <h3 id="footer-heading" class="sr-only">Informazioni di Contatto e Copyright</h3>
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div>
+                        <p class="font-semibold text-lg mb-2">Caffè Duca</p>
+                        <address class="not-italic text-sm leading-relaxed">
+                            Corso Duca degli Abruzzi, 55<br>
+                            10129 Torino TO, Italia<br>
+                            Telefono: <a href="tel:+390123456789" class="hover:text-yellow-400">+39 0123 456789</a>
+                        </address>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg mb-2">Orari di Apertura</p>
+                        <p class="text-sm leading-relaxed">
+                            Lunedì - Sabato: 6:00 - 22:00<br>
+                            Domenica: 8:00 - 20:00
+                        </p>
+                    </div>
+                </div>
+                <p class="text-xs mt-8 pt-8 border-t border-white/20 text-center">© <span id="current-year"></span>
+                    Caffè Duca. Tutti i diritti riservati. Sito web realizzato da Eand Avdiu.</p>
+                <!-- JS can update #current-year -->
+            </div>
 		</footer>
 	</main>
 
+	<div id="lightbox"
+        class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-2 sm:p-4 z-[60] hidden transition-opacity duration-300 opacity-0"
+        role="dialog" aria-modal="true" aria-labelledby="lightbox-image-alt"> <!-- A11y for dialog -->
+        <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-xl">
+        <span id="lightbox-image-alt" class="sr-only">Immagine ingrandita</span> <!-- For screen reader -->
+
+        <button id="lightbox-close" type="button"
+            class="absolute top-2 right-2 sm:top-4 sm:right-4 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1"
+            aria-label="Chiudi visualizzatore immagini">
+            ×
+        </button>
+
+        <button id="lightbox-prev" type="button"
+            class="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full"
+            aria-label="Immagine precedente">
+            ❮ <!-- Left-pointing angle bracket -->
+        </button>
+
+        <button id="lightbox-next" type="button"
+            class="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full"
+            aria-label="Immagine successiva">
+            ❯ <!-- Right-pointing angle bracket -->
+        </button>
+    </div>
+	
 	<!-- Load GSAP before main.js -->
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 	<script src="./assets/js/main.js"></script>
+	    <script>
+        // Small script to update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
