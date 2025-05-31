@@ -77,12 +77,12 @@ function initScrollingLogoAnimation() {
 
     ScrollTrigger.matchMedia({
         // Small screens (up to 1023px)
-        "(max-width: 1023px)": function() {
+        "(max-width: 1023px)": function () {
             gsap.to(movingLogoContainer, {
                 scrollTrigger: {
                     trigger: "#hero",
                     start: "top top",
-                    end: "+=300", // Animation duration in scroll pixels
+                    end: "bottom top", // Animation completes when hero section completely exits viewport
                     scrub: 1,    // Smooth scrubbing
                     onEnter: () => gsap.to(navLogoImg, { autoAlpha: 0, duration: 0.2 }),
                     onLeave: () => gsap.to(navLogoImg, { autoAlpha: 1, duration: 0.2 }), // Show placeholder when animation ends
@@ -97,12 +97,12 @@ function initScrollingLogoAnimation() {
             });
         },
         // Large screens (1024px and up)
-        "(min-width: 1024px)": function() {
+        "(min-width: 1024px)": function () {
             gsap.to(movingLogoContainer, {
                 scrollTrigger: {
                     trigger: "#hero",
                     start: "top top",
-                    end: "+=400",
+                    end: "bottom top", // Animation completes when hero section completely exits viewport
                     scrub: 1,
                     // markers: true, // For debugging ScrollTrigger
                     onEnter: () => gsap.to(navLogoImg, { autoAlpha: 0, duration: 0.2 }),
@@ -118,14 +118,6 @@ function initScrollingLogoAnimation() {
             });
         }
     });
-    // After scroll animation completes (onLeave), the movingLogoContainer itself is not explicitly hidden by GSAP here.
-    // Its visual role is taken over by navLogoImg becoming visible.
-    // If you want movingLogoContainer to also hide, add it to onLeave:
-    // onLeave: () => {
-    //     gsap.to(navLogoImg, { autoAlpha: 1, duration: 0.2 });
-    //     gsap.to(movingLogoContainer, { autoAlpha: 0, duration: 0.2 }); // Hide moving logo
-    // },
-    // And correspondingly for onEnterBack. For now, keeping it simpler as per original.
 }
 
 
@@ -268,7 +260,7 @@ function initializeSlider(containerId, slideSelector, dotsId, autoSlideDelay = 5
                 updateSliderDisplay(); // Snap back
             }
         } else {
-             updateSliderDisplay(); // Snap back if only a click without drag
+            updateSliderDisplay(); // Snap back if only a click without drag
         }
 
         isDragging = false;
@@ -301,101 +293,6 @@ function initializeSlider(containerId, slideSelector, dotsId, autoSlideDelay = 5
     }
 }
 
-/**
- * Initializes a simple lightbox for gallery images.
- */
-function initLightbox() {
-    const lightboxElement = document.getElementById('lightbox');
-    const lightboxImageElement = document.getElementById('lightbox-image');
-    const closeButton = document.getElementById('lightbox-close');
-    const prevButton = document.getElementById('lightbox-prev');
-    const nextButton = document.getElementById('lightbox-next');
-    const pageBody = document.body;
-
-    // Target thumbnails specifically within #main-photo-gallery
-    const thumbnailElements = document.querySelectorAll('#main-photo-gallery .gallery-thumbnail');
-    
-    if (!lightboxElement || !lightboxImageElement || !closeButton || !prevButton || !nextButton || thumbnailElements.length === 0) {
-        // console.warn('Lightbox elements or gallery thumbnails not found.');
-        return;
-    }
-
-    const imageSources = Array.from(thumbnailElements).map(thumb => thumb.dataset.lightboxSrc || thumb.src);
-    let currentImageIndex = 0;
-
-    /**
-     * Opens the lightbox with the specified image.
-     * @param {number} index - The index of the image to display.
-     */
-    function openImage(index) {
-        currentImageIndex = index;
-        lightboxImageElement.src = imageSources[currentImageIndex];
-        lightboxElement.classList.remove('hidden', 'opacity-0');
-        lightboxElement.classList.add('flex'); // Or 'block' if you prefer
-        setTimeout(() => lightboxElement.classList.add('opacity-100'), 10); // For fade-in
-        pageBody.classList.add('overflow-hidden');
-        updateNavigationButtons();
-    }
-
-    /** Closes the lightbox. */
-    function closeImage() {
-        lightboxElement.classList.remove('opacity-100');
-        lightboxElement.classList.add('opacity-0');
-        setTimeout(() => {
-            lightboxElement.classList.add('hidden');
-            lightboxElement.classList.remove('flex');
-            lightboxImageElement.src = ""; // Clear src for performance/safety
-        }, 300); // Match CSS transition duration
-        pageBody.classList.remove('overflow-hidden');
-    }
-
-    /** Shows the previous image in the lightbox. */
-    function showPreviousImage() {
-        openImage((currentImageIndex - 1 + imageSources.length) % imageSources.length);
-    }
-
-    /** Shows the next image in the lightbox. */
-    function showNextImage() {
-        openImage((currentImageIndex + 1) % imageSources.length);
-    }
-
-    /** Updates the visibility of prev/next navigation buttons. */
-    function updateNavigationButtons() {
-        const showNav = imageSources.length > 1;
-        prevButton.classList.toggle('hidden', !showNav);
-        nextButton.classList.toggle('hidden', !showNav);
-    }
-
-    // Add click listeners to thumbnails
-    thumbnailElements.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => openImage(index));
-    });
-
-    // Add listeners for lightbox controls
-    closeButton.addEventListener('click', closeImage);
-    prevButton.addEventListener('click', showPreviousImage);
-    nextButton.addEventListener('click', showNextImage);
-
-    // Close lightbox on overlay click
-    lightboxElement.addEventListener('click', (e) => {
-        if (e.target === lightboxElement) { // Clicked on the backdrop itself
-            closeImage();
-        }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (lightboxElement.classList.contains('hidden')) return; // Lightbox not visible
-
-        if (e.key === 'Escape') closeImage();
-        if (imageSources.length > 1) {
-            if (e.key === 'ArrowLeft') showPreviousImage();
-            if (e.key === 'ArrowRight') showNextImage();
-        }
-    });
-}
-
-
 // --- Main Event Listener for DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
@@ -404,7 +301,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize sliders
     initializeSlider('gallery-container', '.gallery-slide', 'gallery-dots', 5000);
     initializeSlider('about-cards-container', '.about-card-slide', 'about-cards-dots', 7000);
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
 
-    // Initialize lightbox
-    initLightbox();
 });
