@@ -25,6 +25,13 @@
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="output.css" />
 	<link rel="stylesheet" href="./assets/css/fancybox.css" />
+	<link rel="preload" href="./assets/images/hero-1920.webp" as="image">
+
+	<!-- DNS prefetch for faster image loading -->
+	<link rel="dns-prefetch" href="//assets">
+
+	<!-- Preconnect for faster resource loading -->
+	<link rel="preconnect" href="." crossorigin>
 </head>
 
 <body class="font-sans antialiased text-gray-900 bg-cyan-700">
@@ -119,8 +126,16 @@
 
 		<!-- Hero Section -->
 		<section id="hero" class="relative h-screen w-full overflow-hidden" aria-labelledby="hero-title">
-			<img src="./assets/images/Copia di Caffe_DUCA_Originale.pdf.png" alt="Benvenuti al Caffè Duca"
-				class="absolute inset-0 object-cover w-full h-full" />
+			<picture>
+				<!-- WebP for modern browsers -->
+				<source media="(min-width: 1440px)" srcset="./assets/images/hero-1920.webp" type="image/webp">
+				<source media="(min-width: 768px)" srcset="./assets/images/hero-1440.webp" type="image/webp">
+				<source media="(max-width: 767px)" srcset="./assets/images/hero-mobile.webp" type="image/webp">
+
+				<!-- Fallback to original -->
+				<img src="./assets/images/Copia di Caffe_DUCA_Originale.pdf.png" alt="Benvenuti al Caffè Duca"
+					class="absolute inset-0 object-cover w-full h-full" loading="eager" decoding="async" />
+			</picture>
 		</section>
 
 		<!-- Welcome Section -->
@@ -313,33 +328,33 @@
 				<div id="main-photo-gallery" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
 					<!-- @TODO: add alt to all images and change data-lightbox to webp version -->
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_4212.webp" data-fancybox="gallery" data-src="./assets/images/ILE_4212.jpg"
-							alt="Interior del Caffè Duca" loading="lazy"
+						<img src="./assets/images/ILE_4212.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_4212.jpg" alt="Interior del Caffè Duca" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_4227.webp" data-fancybox="gallery" data-src="./assets/images/ILE_4227.jpg"
-							alt="Dettaglio Caffè" loading="lazy"
+						<img src="./assets/images/ILE_4227.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_4227.jpg" alt="Dettaglio Caffè" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_4334.webp" data-fancybox="gallery" data-src="./assets/images/ILE_4334.jpg"
-							alt="Torta Fatta in Casa" loading="lazy"
+						<img src="./assets/images/ILE_4334.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_4334.jpg" alt="Torta Fatta in Casa" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_4390.webp" data-fancybox="gallery" data-src="./assets/images/ILE_4390.jpg"
-							alt="Aperitivo al Caffè Duca" loading="lazy"
+						<img src="./assets/images/ILE_4390.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_4390.jpg" alt="Aperitivo al Caffè Duca" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_3949.webp" data-fancybox="gallery" data-src="./assets/images/ILE_3949.jpg"
-							alt="Esterno Caffè Duca" loading="lazy"
+						<img src="./assets/images/ILE_3949.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_3949.jpg" alt="Esterno Caffè Duca" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 					<div class="aspect-square overflow-hidden rounded-lg">
-						<img src="./assets/images/ILE_4025.webp" data-fancybox="gallery" data-src="./assets/images/ILE_4025.jpg"
-							alt="Il Team del Caffè Duca" loading="lazy"
+						<img src="./assets/images/ILE_4025.webp" data-fancybox="gallery"
+							data-src="./assets/images/ILE_4025.jpg" alt="Il Team del Caffè Duca" loading="lazy"
 							class="gallery-thumbnail w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
 					</div>
 				</div>

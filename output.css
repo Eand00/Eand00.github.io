@@ -1186,6 +1186,18 @@
     }
   }
 }
+@layer critical {
+  #hero {
+    background-color: #0e7490;
+    background-image: url('./assets/images/hero-1920.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #hero img {
+    will-change: transform;
+  }
+}
 #moving-logo-container {
   will-change: top, left, width, transform;
 }
