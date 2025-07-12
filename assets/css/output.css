@@ -48,7 +48,6 @@
     --radius-xl: 0.75rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --animate-bounce: bounce 1s infinite;
     --blur-sm: 8px;
     --blur-2xl: 40px;
     --blur-3xl: 64px;
@@ -575,9 +574,6 @@
       border-color: color-mix(in oklab, var(--color-white) 60%, transparent);
     }
   }
-  .bg-\[\#daa520\] {
-    background-color: #daa520;
-  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -646,9 +642,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .font-sans {
-    font-family: var(--font-sans);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -1077,7 +1070,6 @@
     display: block;
     height: calc(var(--spacing) * 1);
     width: calc(var(--spacing) * 8);
-    background-color: var(--color-white);
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -1188,32 +1180,14 @@
 #moving-logo-container {
   will-change: top, left, width, transform;
 }
-.bg-forest-dark {
-  background-color: #1a2e1a;
-}
 .bg-forest-medium {
   background-color: #2d4a2d;
 }
-.bg-forest-light {
-  background-color: #3d5a3d;
-}
-.bg-forest-accent {
-  background-color: #4a6b4a;
-}
-.text-cream {
-  color: #faf8f5;
-}
-.text-gold-medium {
-  color: #b8860b;
-}
 .text-gold {
-  color: #daa520;
+  color: #bcb42d;
 }
-.text-warm-white {
-  color: #fefefe;
-}
-.text-light-cream {
-  color: #f8f6f3;
+.bg-gold {
+  background-color: #bcb42d;
 }
 @property --tw-translate-x {
   syntax: "*";
