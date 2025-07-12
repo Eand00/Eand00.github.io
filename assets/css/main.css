@@ -109,9 +109,9 @@
 
     /* Critical hero styles that must load immediately */
     #hero {
-        background-color: #0e7490;
+        background-color: #2d4a2d;
         /* Fallback color matching your theme */
-        background-image: url('./assets/images/hero-1920.webp');
+        background-image: url('https://caffeducatorino.it/assets/images/hero-1920.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -139,4 +139,8 @@
 .bg-gold {
     /* background-color: #daa520; */
     background-color: #bcb42d;
+}
+
+.bg-forest-dark {
+    background-color: #1e321e;
 }
