@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @layer components {
+    .font-cinzel {
+        font-family: 'Cinzel Decorative', serif;
+    }
+    
     .hamburger-line {
         @apply block w-8 h-1 my-1.5 bg-white transition-all duration-300 relative;
     }
@@ -117,4 +121,40 @@
 }
 #moving-logo-container {
     will-change: top, left, width, transform;
+}
+.bg-forest-dark{
+    background-color: #1a2e1a;
+}
+
+.bg-forest-medium{
+    background-color: #2d4a2d;
+}
+
+.bg-forest-light{
+    background-color: #3d5a3d;
+}
+
+.bg-forest-accent{
+    background-color: #4a6b4a;
+}
+
+.text-cream {
+    color: #faf8f5;
+}
+
+.text-gold-medium {
+    color: #b8860b;
+}
+
+.text-gold {
+    color: #daa520;
+    /* color: #bcb42d; */
+}
+
+.text-warm-white {
+    color: #fefefe;
+}
+
+.text-light-cream {
+    color: #f8f6f3;
 }

@@ -16,6 +16,8 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,12 +25,9 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- Custom styles -->
-	<link rel="stylesheet" href="output.css" />
+	<link rel="stylesheet" href="./assets/css/output.css" />
 	<link rel="stylesheet" href="./assets/css/fancybox.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
-
+	
 	<!-- DNS prefetch for faster image loading -->
 	<link rel="dns-prefetch" href="//assets">
 
@@ -38,10 +37,10 @@
 		rel="stylesheet">
 </head>
 
-<body class="font-sans antialiased text-gray-900 bg-cyan-700">
+<body class="font-cinzel antialiased text-gray-900 bg-forest-medium">
 
 	<!-- Header Section (Welcome Area) -->
-	<header class="fixed top-0 left-0 w-full z-50 text-white" aria-label="Intestazione principale">
+	<header class="fixed top-0 left-0 w-full z-50 text-gold" aria-label="Intestazione principale">
 		<!-- Navigation Bar -->
 		<nav id="main-nav"
 			class="relative flex justify-between items-center px-6 py-4 lg:px-8 bg-transparent transition-colors duration-300 ease-in-out"
@@ -50,7 +49,7 @@
 			<!-- Logo(Left) -->
 			<a id="nav-logo" href="#" aria-label="Torna alla homepage">
 				<img id="nav-logo-img" src="./assets/favicon/Caffe_DUCA_icon.svg" alt="Logo Caffè Duca"
-					class="h-auto w-22 text-white transition-opacity duration-200">
+					class="h-auto w-22 text-gold transition-opacity duration-200">
 			</a>
 
 			<!-- Desktop Navigation Links -->
@@ -74,7 +73,7 @@
 
 		<!-- Mobile Slide-In Menu -->
 		<div id="mobile-menu"
-			class="fixed inset-0 flex flex-col items-center justify-center bg-cyan-900 bg-opacity-95 transform translate-x-full transition-transform duration-300 ease-in-out z-[51] p-8 text-white"
+			class="fixed inset-0 flex flex-col items-center justify-center bg-forest-dark bg-opacity-95 transform translate-x-full transition-transform duration-300 ease-in-out z-[51] p-8 text-gold"
 			aria-hidden="true" role="dialog" aria-labelledby="mobile-menu-title">
 
 			<div class="w-full max-w-xs mx-auto text-center">
@@ -143,9 +142,9 @@
 
 		<!-- Welcome Section -->
 		<section id="welcome"
-			class="relative flex flex-col items-center justify-center bg-cyan-800 min-h-screen px-6 py-16 sm:py-24"
+			class="relative flex flex-col items-center justify-center bg-forest-medium min-h-screen px-6 py-16 sm:py-24"
 			aria-labelledby="welcome-heading">
-			<div class="text-center text-white max-w-3xl mx-auto">
+			<div class="text-center text-gold max-w-3xl mx-auto">
 				<h1 id="welcome-heading" class="text-4xl sm:text-5xl font-bold mb-6">Questo è Caffe Duca</h1>
 				<p class="text-lg sm:text-xl leading-relaxed">
 					Il Caffé Duca, al servizio della città dal 1972, affonda le proprie radici nella tradizione torinese
@@ -194,7 +193,7 @@
 
 		<!-- Specialities -->
 		<section id="specialita"
-			class="relative flex flex-col items-center justify-center bg-cyan-700 min-h-screen px-6 sm:px-8 py-16 sm:py-24 text-white"
+			class="relative flex flex-col items-center justify-center bg-forest-medium min-h-screen px-6 sm:px-8 py-16 sm:py-24 text-gold"
 			aria-labelledby="specialties-heading">
 			<div class="text-center max-w-5xl mx-auto">
 				<h2 id="specialties-heading" class="text-4xl sm:text-5xl font-bold mb-6">Le Nostre Specialità</h2>
@@ -257,7 +256,7 @@
 
 		<!-- Menu Section -->
 		<section id="menu"
-			class="relative flex flex-col items-center justify-center bg-cyan-800 py-16 sm:py-24 px-6 text-white"
+			class="relative flex flex-col items-center justify-center bg-forest-medium py-16 sm:py-24 px-6 text-gold"
 			aria-labelledby="menu-heading">
 
 			<!-- Background decoration -->
@@ -279,7 +278,7 @@
 					<div
 						class="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:bg-white/15 transition-all duration-300 group">
 						<div class="mb-6">
-							<i class="fas fa-utensils text-4xl text-[#bcb42d] mb-4"></i>
+							<i class="fas fa-utensils text-4xl text-gold mb-4"></i>
 							<h3 class="text-2xl font-bold mb-3">Menu Principale</h3>
 							<p class="text-sm opacity-80 mb-6">
 								Dalle colazioni ai pranzi, dai dolci agli aperitivi.
@@ -287,7 +286,7 @@
 							</p>
 						</div>
 						<a href="./assets/pdf/menu_plastificato.pdf" download="Caffe_Duca_Menu.pdf"
-							class="inline-flex items-center bg-[#bcb42d] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-6 rounded-lg text-lg transition-all duration-200 shadow-md group-hover:shadow-lg">
+							class="inline-flex items-center bg-[#daa520] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-6 rounded-lg text-lg transition-all duration-200 shadow-md group-hover:shadow-lg">
 							<i class="fas fa-download mr-2"></i>
 							Scarica Menu
 						</a>
@@ -297,7 +296,7 @@
 					<div
 						class="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:bg-white/15 transition-all duration-300 group">
 						<div class="mb-6">
-							<i class="fas fa-wine-glass-alt text-4xl text-[#bcb42d] mb-4"></i>
+							<i class="fas fa-wine-glass-alt text-4xl text-gold mb-4"></i>
 							<h3 class="text-2xl font-bold mb-3">Carta dei Vini</h3>
 							<p class="text-sm opacity-80 mb-6">
 								Una selezione curata di vini nazionali ed esteri,
@@ -305,7 +304,7 @@
 							</p>
 						</div>
 						<a href="./assets/pdf/wine_list.pdf" download="Caffe_Duca_Carta_Vini.pdf"
-							class="inline-flex items-center bg-[#bcb42d] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-6 rounded-lg text-lg transition-all duration-200 shadow-md group-hover:shadow-lg">
+							class="inline-flex items-center bg-[#daa520] hover:bg-yellow-600 text-cyan-900 font-bold py-3 px-6 rounded-lg text-lg transition-all duration-200 shadow-md group-hover:shadow-lg">
 							<i class="fas fa-download mr-2"></i>
 							Scarica Carta
 						</a>
@@ -324,7 +323,7 @@
 
 		<!-- Photo Gallery Grid Section -->
 		<section id="galleria"
-			class="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 sm:py-24 text-white"
+			class="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 sm:py-24 text-gold"
 			aria-labelledby="gallery-heading">
 			<div class="text-center w-full max-w-6xl mx-auto">
 				<h2 id="gallery-heading" class="text-4xl sm:text-5xl font-bold mb-10 sm:mb-12">Gallery</h2>
@@ -368,9 +367,9 @@
 
 		<!-- About Section -->
 		<section id="about"
-			class="relative flex flex-col items-center justify-center bg-cyan-800 min-h-screen py-16 sm:py-24 px-6"
+			class="relative flex flex-col items-center justify-center bg-forest-medium min-h-screen py-16 sm:py-24 px-6"
 			aria-labelledby="about-heading">
-			<div class="text-center text-white w-full">
+			<div class="text-center text-gold w-full">
 				<h2 id="about-heading" class="text-4xl sm:text-5xl font-bold mb-10 sm:mb-12">Per saperne di più</h2>
 				<div class="w-full max-w-lg md:max-w-xl mx-auto"> <!-- A: Overall container for the slider component -->
 
@@ -419,7 +418,7 @@
 
 		<!-- Location / Contact Section -->
 		<section id="location"
-			class="relative flex flex-col items-center justify-center bg-cyan-700 min-h-[80vh] px-6 py-16 sm:py-24 text-white"
+			class="relative flex flex-col items-center justify-center bg-forest-medium min-h-[80vh] px-6 py-16 sm:py-24 text-gold"
 			aria-labelledby="location-heading">
 			<div class="w-full mx-auto">
 				<div class="flex flex-col lg:flex-row lg:items-center lg:gap-12">
@@ -475,7 +474,7 @@
 		</section>
 
 		<!-- Footer -->
-		<footer id="contact" class="bg-cyan-900 text-white py-8  px-6" aria-labelledby="footer-heading">
+		<footer id="contact" class="bg-forest-dark text-gold py-8  px-6" aria-labelledby="footer-heading">
 			<div class="max-w-4xl mx-auto text-center sm:text-left">
 				<h3 id="footer-heading" class="sr-only">Informazioni di Contatto e Copyright</h3>
 				<div class="grid sm:grid-cols-2 gap-8">
@@ -509,19 +508,19 @@
 		<span id="lightbox-image-alt" class="sr-only">Immagine ingrandita</span> <!-- For screen reader -->
 
 		<button id="lightbox-close" type="button"
-			class="absolute top-2 right-2 sm:top-4 sm:right-4 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1"
+			class="absolute top-2 right-2 sm:top-4 sm:right-4 text-gold text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1"
 			aria-label="Chiudi visualizzatore immagini">
 			×
 		</button>
 
 		<button id="lightbox-prev" type="button"
-			class="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full transition-opacity duration-300 opacity-0"
+			class="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 text-gold text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full transition-opacity duration-300 opacity-0"
 			aria-label="Immagine precedente">
 			❮
 		</button>
 
 		<button id="lightbox-next" type="button"
-			class="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full transition-opacity duration-300 opacity-0"
+			class="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 text-gold text-3xl sm:text-4xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white p-2 bg-black bg-opacity-40 hover:bg-opacity-60 rounded-full transition-opacity duration-300 opacity-0"
 			aria-label="Immagine successiva">
 			❯
 		</button>
