@@ -141,6 +141,15 @@
     background-color: #bcb42d;
 }
 
+.border-gold {
+    /* border-color: #daa520; */
+    border-color: #bcb42d;
+}
+
 .bg-forest-dark {
     background-color: #1e321e;
+}
+
+.text-forest-medium {
+    color: #2d4a2d;
 }
